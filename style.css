@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.name {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card {
+  transition: transform 0.8s;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.card:hover {
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('img/qr.png');
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(238, 231, 231);
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+}
